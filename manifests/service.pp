@@ -42,8 +42,9 @@ class nexus::service (
   $nexus_script = "${nexus_home}/bin/nexus"
 
   if ($::operatingsystem == 'Debian' and versioncmp($::operatingsystemrelease, '8.0') > 0) or
-     ($::operatingsystem == 'Ubuntu' and versioncmp($::operatingsystemrelease, '15.04') > 0) {
-    file { '/lib/systemd/system/nexus.service':
+     ($::operatingsystem == 'Ubuntu' and versioncmp($::operatingsystemrelease, '15.04') > 0) or
+     ($::operatingsystem == 'RedHat' and versioncmp($::operatingsystemrelease, '7') > 0) {
+    file { '/etc/systemd/system/nexus.service':
       mode    => '0644',
       owner   => 'root',
       group   => 'root',

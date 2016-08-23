@@ -6,3 +6,4 @@ pkg
 spec/fixtures/
 .vagrant/
 log/
+.idea/
