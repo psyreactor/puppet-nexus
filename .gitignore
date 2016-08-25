@@ -7,3 +7,5 @@ spec/fixtures/
 .vagrant/
 log/
 .idea/
+.librarian
+.tmp
